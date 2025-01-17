@@ -20,25 +20,25 @@ Enter your prompt text and adjust the generation parameters:
 
 ```mermaid
 flowchart TD
-    Input[Input Tokens] --> TokenEmb[Token Embeddings]
-    Input --> PosEmb[Position Embeddings]
-    TokenEmb --> Add((+))
-    PosEmb --> Add
-    Add --> TransformerBlocks[Transformer Blocks]
+    A[Input] -->|tokens| B[Embeddings]
+    A -->|position| C[Position Encoding]
+    B --> D{Add}
+    C --> D
+    D --> E[Transformer Blocks]
     
-    subgraph TransformerBlock["Transformer Block (x12)"]
+    subgraph Block[Transformer Block x12]
         direction TB
-        TransformerBlocks --> LN1[LayerNorm 1]
-        LN1 --> Attention[Self Attention]
-        Attention --> ResConn1((+))
-        ResConn1 --> LN2[LayerNorm 2]
-        LN2 --> MLP[MLP]
-        MLP --> ResConn2((+))
+        E --> F[Layer Norm 1]
+        F --> G[Self Attention]
+        G --> H{Add}
+        H --> I[Layer Norm 2]
+        I --> J[MLP]
+        J --> K{Add}
     end
     
-    TransformerBlock --> FinalLN[Final LayerNorm]
-    FinalLN --> LMHead[Language Model Head]
-    LMHead --> Output[Output Logits]
+    Block --> L[Final Layer Norm]
+    L --> M[LM Head]
+    M --> N[Output Logits]
 ```
 
 ### Key Components
