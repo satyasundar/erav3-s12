@@ -15,8 +15,9 @@ Enter your prompt text and adjust the generation parameters:
 - Training Data: Shakespeare's plays
 - Context Length: 1024 tokens
 - Model Size: ~124M (124,439,808) parameters
+- [Model Logs](#training-logs)
 
-## Architecture Flow
+## Architecture Flow Detail
 
 ```mermaid
 flowchart TD
@@ -79,7 +80,9 @@ flowchart TD
    - Generates multiple continuations
    - Uses temperature-controlled sampling
 
-## [Training Logs](model_training_log_124M.log)
+## Training Logs
+
+  Log File Path : [./model_training_log_124M.log](model_training_log_124M.log)
 
 ```
     using device: mps
