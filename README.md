@@ -17,6 +17,13 @@ Enter your prompt text and adjust the generation parameters:
 - Model Size: ~124M (124,439,808) parameters
 - [Model Logs](#training-logs)
 
+## Deployment
+The model is deployed on HuggingFace Spaces. Link is here.
+
+  https://huggingface.co/spaces/satyanayak/transformer-basic
+
+  ![HuggingFace Screenshot](sample-output.jpg)
+
 ## Architecture Flow Detail
 
 ```mermaid
